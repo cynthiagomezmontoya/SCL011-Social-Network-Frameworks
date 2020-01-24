@@ -62,7 +62,7 @@ return (
   <div className="App">
     <header className="App-header">
        
-      <p> ConstruRed</p>
+    <p> ConstruRed</p>
       { this.renderLoginButton()}
     
     </header>

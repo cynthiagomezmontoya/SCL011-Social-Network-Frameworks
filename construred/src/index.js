@@ -6,11 +6,11 @@ import App from './App';
 
 
 firebase.initializeApp({
-apiKey: "AIzaSyDRj__4Ty1hwTj3rg1aTltsE1OjC6z2ckk",
-    authDomain: "construred-d2c22.firebaseapp.com",
-    databaseURL: "https://construred-d2c22.firebaseio.com",
-    storageBucket: "construred-d2c22.appspot.com",
-    messagingSenderId: "145471676980",
+    apiKey: "AIzaSyCt7KrPsSQ93-yqxwizWVL6J49te9NEWTQ",
+    authDomain: "construred-e6cfb.firebaseapp.com",
+    databaseURL: "https://construred-e6cfb.firebaseio.com",
+    storageBucket: "construred-e6cfb.appspot.com",
+    messagingSenderId: "360839152782",
     
   });
 

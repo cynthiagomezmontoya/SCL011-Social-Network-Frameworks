@@ -1,75 +1,59 @@
 import React from 'react';
-import 'firebaseui/dist/firebaseui.css';
-import Firebase from '../server/Firebase';
+import fire from '../server/fire';
+
+
 
 
 class Login extends React.Component {
-    state = {
-     autenticado:false,
-     usuario:"",
-     firebase:null
-  
-  }
-  
-  componentDidMount(){
-    const firebase= new Firebase();
 
-    firebase.auth().onAuthStateChanged(authuser => {
-
-     authuser
-     ? this.setState ({
-         autenticado : true,
-         usuario: firebase.auth.correntuser.email,
-         firebase : firebase
+  login () {
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+  
+    fire.auth().signInWithEmailAndPassword(email, password)
+    .then((u) => {
+     console.log ("Successfully Logget in");
     })
-    :firebase.firebaseui.start("#firebaseui-auth-container"),{
-       singInSuccessUrl : "/",
-       credentialHelper:"none",
-       callbacks:{
-         signInsuccessWithAuthResult: (authResult, redirectUrl) =>{
+    .cath ((err) => {
+     console.log("Error:" + err.tostring());
+     })
+    }
+  
+  
+  signUp () {
+  
+  const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+  
+    fire.auth().createUserWithEmailAndPassword(email, password)
+    .then((u) => {
+     console.log ("Successfully Signed up");
+    })
+    .cath ((err) => {
+     console.log("Error:" + err.tostring());
+     })
+    }
 
-      this.setState({
-          autenticado: true,
-          usuario: firebase.auth.correntUser.email,
-          firebase : firebase
-   })
 
-     return false;
 
-   }
 
-  },
-   signInOptions:[
-   {
-    provider : firebase.autorization.EmailAuthProvider.PROVIDER_ID
-   }
- ]
+render () {
+ return (
+  <div style={{ textAlign:'center'}}>
+   <div>
+    <div> Email </div>
+     <input id="email" placeholder="Enter Email.." type="text" />
+   </div>
+    <div> Password </div>
+     <input id="password" placeholder="Enter Password.." type="text" />
+   
+   < button style = {{ margin:'10px'}} onClick={ this.login}>Login</button>
+   < button style = {{ margin:'10px'}} onClick={ this.signUp}>Sign Up</button>
+   </div>
 
-}
+ );
 
-})
-
-}
-
-render (){
-  return this.state.autenticado
-  ? (
-   <React.Fragment>
-     <div> UsuarioLogeado {this.state.usuario}</div>
-     <a href="#" onClick={() =>{ this.state.firebase.auth.signOut().them(success=>{
-           this.setState({
-               autenticado:false
-                }) 
-              })
-           }
-        }>Salir</a>
-
-    </React.Fragment>
-
-)
-:<div id="firebaseui-auth-container"></div>
-}
-
+ }
 
 }
 

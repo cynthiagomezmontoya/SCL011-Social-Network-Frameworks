@@ -2,8 +2,6 @@ import React from 'react';
 import fire from '../server/fire';
 
 
-
-
 class Login extends React.Component {
 
   login () {

@@ -1,5 +1,5 @@
 import React,{ Component }from 'react';
-import Home from './server/Home';
+import Home from'./components/Home';
 import Login from './components/Login';
 import fire from  '../src/server/fire';
 

@@ -3,12 +3,19 @@
     text-align:center;
     color:red;
     border-radius: 15px;
+    background-color:#2A4D6E;
+    padding: 1px;
     
-   
-    
-   
-  
 }
+p {
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
 
-
+}
   
+button{
+    
+    padding: 10px
+
+
+}

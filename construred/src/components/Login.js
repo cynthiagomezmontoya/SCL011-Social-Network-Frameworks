@@ -32,10 +32,25 @@ class Login extends React.Component {
      })
     }
 
-
     render () {
       return (
-       <div style={{ textAlign:'center'}}>
+        <div style={{ textAlign:'center',
+                      padding:100 }}>
+
+       <div className="logo">
+       
+       <p> ConstruRed </p>
+       
+      <img
+        src="https://img2.freepng.es/20181217/ewx/kisspng-construction-logo-limited-company-business-construction2-1646-free-construction-tools-l-5c1875de08db94.5944762415451069100363.jpg"
+        alt="LOGO"
+        border="0"
+        width="250px"
+        height="250px"
+      ></img>
+    
+      </div>
+
         <div>
          <div>Email</div>
           <input id="email" placeholder="Ingrese Email.." type="text"/>
@@ -44,8 +59,8 @@ class Login extends React.Component {
          <div>Password</div>
           <input  id="password" placeholder="Ingrese Password.." type="text"/>
         </div>
-        <button onClick={ this.login}>Ingresar</button>
-        <button  onClick={ this.signUp}>Registrarse</button>
+        <button style={{margin:"60px"}} onClick={ this.login}>Iniciar Sesion</button>
+        <button style={{margin:"60px"}} onClick={ this.signUp}>Registrarse</button>
         </div>
      
       );

@@ -13,8 +13,8 @@ class Home extends React.Component {
 render () {
  return (
   <div>
-   <h1> Iniciar sesion </h1>
-   <button onClick={this.logout}>Logout</button>
+   <h1> Sesion Iniciada</h1>
+   <button onClick={this.logout}>Salir</button>
   </div>
 
 

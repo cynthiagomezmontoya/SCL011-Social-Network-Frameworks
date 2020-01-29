@@ -35,7 +35,7 @@ class App extends Component {
   render () {
    return (
     <div>
-    {this.state.user ? (<Home/>) : (<Login/>)}
+      {this.state.user ? (<Home/>) : (<Login/>)}
     </div>
   );
  }

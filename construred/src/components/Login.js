@@ -1,6 +1,6 @@
 import React from 'react';
 import fire from '../server/fire';
-
+import './Login.css';
 
 class Login extends React.Component {
 
@@ -10,10 +10,10 @@ class Login extends React.Component {
   
     fire.auth().signInWithEmailAndPassword(email, password)
     .then((u) => {
-     console.log ("Successfully Logget in");
+     console.log ("Sesion Activa");
     })
-    .cath ((err) => {
-     console.log("Error:" + err.tostring());
+    .catch ((err) => {
+     console.log("Error:" + err.toString());
      })
     }
   
@@ -25,34 +25,33 @@ class Login extends React.Component {
   
     fire.auth().createUserWithEmailAndPassword(email, password)
     .then((u) => {
-     console.log ("Successfully Signed up");
+     console.log ("Registro Exitoso");
     })
-    .cath ((err) => {
-     console.log("Error:" + err.tostring());
+    .catch ((err) => {
+     console.log("Error:" + err.toString());
      })
     }
 
 
-
-
-render () {
- return (
-  <div style={{ textAlign:'center'}}>
-   <div>
-    <div> Email </div>
-     <input id="email" placeholder="Enter Email.." type="text" />
-   </div>
-    <div> Password </div>
-     <input id="password" placeholder="Enter Password.." type="text" />
-   
-   < button style = {{ margin:'10px'}} onClick={ this.login}>Login</button>
-   < button style = {{ margin:'10px'}} onClick={ this.signUp}>Sign Up</button>
-   </div>
-
- );
-
- }
-
-}
+    render () {
+      return (
+       <div style={{ textAlign:'center'}}>
+        <div>
+         <div>Email</div>
+          <input id="email" placeholder="Ingrese Email.." type="text"/>
+        </div>
+        <div>
+         <div>Password</div>
+          <input  id="password" placeholder="Ingrese Password.." type="text"/>
+        </div>
+        <button onClick={ this.login}>Ingresar</button>
+        <button  onClick={ this.signUp}>Registrarse</button>
+        </div>
+     
+      );
+     
+      }
+     
+     }
 
 export default Login;
